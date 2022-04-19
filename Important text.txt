@@ -1,0 +1,22 @@
+
+                        <div id="carouselExampleSlidesOnly" class="carousel slide mb-5" data-ride="carousel">
+                            <div class="carousel-inner">
+                              <div class="carousel-item active">
+                                <h1 class="font-weight-bolder">The Best Farm Houses of Punjab</h1>
+                                <h4>Lahore Greenz</h4>
+
+
+                              </div>
+                              <div class="carousel-item"> 
+                                <h1 class="font-weight-bolder">The Best Farm Houses of Punjab</h1>
+                                <h4>Lahore Greenz</h4>
+
+                            </div>
+                              <div class="carousel-item">
+                                <h1 class="font-weight-bolder">The Best Farm Houses of Punjab</h1>
+                                <h4>Lahore Greenz</h4>
+
+                            </div>
+                            </div>
+                          </div>
+

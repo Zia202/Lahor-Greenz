@@ -1,0 +1,723 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Lahore Greenz</title>
+    <link rel="icon" type="image/x-icon" href="LOGO.png" />
+    <title>Lahore Greenz | Farm Houses</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Jura:wght@300&display=swap" rel="stylesheet">
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+    <script src="https://kit.fontawesome.com/yourcode.js"></script>
+
+
+    <style>
+        /* Button used to open the chat form - fixed at the bottom of the page */
+        .open-button {
+            background-color: #555;
+            color: white;
+            padding: 16px 20px;
+            border: none;
+            cursor: pointer;
+            opacity: 0.8;
+            position: fixed;
+            bottom: 23px;
+            left: 28px;
+            width: 100px;
+            border-radius: 5px;
+        }
+
+        /* The popup chat - hidden by default */
+        .chat-popup {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            left: 15px;
+            border: 3px solid white;
+            z-index: 9;
+            border-radius: 10px 10px 0px 0px;
+        }
+
+        /* Add styles to the form container */
+        .form-container {
+            max-width: 300px;
+            padding: 10px;
+            background-color: white;
+        }
+
+        /* Full-width textarea */
+        .form-container textarea {
+            width: 100%;
+            padding: 15px;
+            margin: 5px 0 22px 0;
+            border: none;
+            background: #f1f1f1;
+            resize: none;
+            min-height: 200px;
+        }
+
+        /* When the textarea gets focus, do something */
+        .form-container textarea:focus {
+            background-color: #ddd;
+            outline: none;
+        }
+
+        /* Set a style for the submit/send button */
+        .form-container .btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 16px 20px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            margin-bottom: 10px;
+            opacity: 0.8;
+        }
+
+        /* Add a red background color to the cancel button */
+        .form-container .cancel {
+            background-color: red;
+        }
+
+        /* Add some hover effects to buttons */
+        .form-container .btn:hover,
+        .open-button:hover {
+            opacity: 1;
+        }
+
+
+
+        .flip-card {
+            background-color: transparent;
+            width: 300px;
+            height: 300px;
+            perspective: 1000px;
+        }
+
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        }
+
+        .flip-card:hover .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .flip-card-front,
+        .flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+        }
+
+        .flip-card-front {
+            background-color: #bbb;
+            color: black;
+        }
+
+        .flip-card-back {
+            background-color: #0ebe27;
+            color: white;
+            transform: rotateY(180deg);
+        }
+    </style>
+
+</head>
+
+<body onload="MyFunction()">
+    <div id="loading">
+
+    </div>
+
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light font-weight-bold bg">
+        <div class="container">
+            <a class="navbar-brand" href="#"><img src="LAHORE LOGO.png" width="150px" /></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#Section1">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#Section2">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#Section3"> Pricing </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#Section4"> Facilities</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#Section5"> Video</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#Section6">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#Section8">Maps</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#Section7">About us</a>
+                    </li>
+                    <li class="nav-item">
+                        <img src="Real Estate.png" class="ml-5" width="150px" />
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <div id="Section1">
+        <div id="carouselExampleSlidesOnly" class="carousel slide mb-5" data-bs-ride="carousel">
+            <div class="carousel-inner">
+
+
+                <div class="carousel-item active">
+                    <img src="Header.jpg" class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+
+
+
+                        <div id="carouselExampleSlidesOnly" class="carousel slide mb-5" data-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <h1 class="font-weight-bolder">Dream Farm Houses of Lahore</h1>
+                                    <h4>Lahore Greenz</h4>
+
+
+                                </div>
+                                <div class="carousel-item">
+                                    <h1 class="font-weight-bolder">Best investment Oppertunity</h1>
+                                    <h4>Farm Houses</h4>
+
+                                </div>
+                                <div class="carousel-item">
+                                    <h1 class="font-weight-bolder">We are here for you Contact us</h1>
+                                    <h4>Contact us</h4>
+
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+                        <a href="#Section6"><button class="border-0"
+                                style="background-image: radial-gradient(circle,#F4DA64, #b58f17); height:40px;">Book
+                                Now</button></a>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+    <!--Facilities-->
+    <div id="Section2">
+        <h1 class="text-center text-success font-weight-bold mb-5">FEATURES</h1>
+        <div class="row m-auto">
+            <div class="col-sm-3 col-md-3 col-lg-3 mb-3">
+                <h1 class="text-center zoom text-success"><i class="fas fa-expand-arrows-alt fa-lg"></i> </h1>
+                <h3 class="card-title text-center text-dark mt-5">
+                    40-50%
+                </h3>
+                <p class="card-subtitle text-justify text-center text-dark">
+                    Neighborhood Experienced an increase
+                </p>
+            </div>
+
+            <div class="col-sm-3 col-md-3 col-lg-3 mb-3">
+                <h1 class="text-center zoom text-success"> <i class="fas fa-chart-line fa-lg"></i> </h1>
+                <h3 class="card-title text-center text-dark mt-5">
+                    70-80%
+                </h3>
+                <p class="card-subtitle text-justify text-center text-dark">
+                    Price increase projected in next 2 years.
+                </p>
+            </div>
+
+            <div class="col-sm-3 col-md-3 col-lg-3 mb-3">
+                <h1 class="text-center zoom text-success"> <i class="fas fa-home fa-lg"></i> </h1>
+                <h3 class="card-title text-center text-dark mt-5">
+                    Custom Farmhouse
+                </h3>
+                <p class="card-subtitle text-justify text-center text-dark">
+                    Construction Options Available
+                </p>
+            </div>
+
+            <div class="col-sm-3 col-md-3 col-lg-3 mb-3">
+                <h1 class="text-center zoom text-success"> <i class="fas fa-exchange-alt fa-lg"></i> </h1>
+                <h3 class="card-title text-center text-dark mt-5">
+                    Easy Transfer
+                </h3>
+                <p class="card-subtitle text-justify text-center text-dark">
+                    Easy Transfer Of Ownership
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+    <!--Pricing-->
+    <div id="Section3">
+
+        <h1 class="text-center text-success mb-5 mt-5 font-weight-bold">Easy Installment Plan</h1>
+        <div class="border-0" style="border-radius:0px; background-color:whitesmoke;">
+            <div class="row m-auto">
+
+
+                <div class="col-sm-3 col-md-3 col-lg-3 mt-3">
+                    <div class="card shadow mb-5 mt-5 border-0">
+                        <h1 class="text-success mb-3
+                             ml-5 mt-5">
+                            2 Kanal
+                        </h1>
+                        <ul class="text-dark ml-4 mt-3">
+                            <li>
+                                Total Price 70 lac.
+                            </li>
+                            <li>
+                                25% Advanced 17.5 lac.
+                            </li>
+                            <li>
+                                12 Month Easy Installment.
+                            </li>
+                            <li>
+                                Monthly 4 lac 37 thousand.
+                            </li>
+                        </ul>
+                        <button class="border-0"
+                            style="background-image: radial-gradient(circle, #F4DA64, #b58f17); height:50px;">4,37500/Monthly</button>
+                    </div>
+                </div>
+
+
+                <div class="col-sm-3 col-md-3 col-lg-3 mt-3">
+                    <div class="card shadow mb-5 mt-5 border-0">
+                        <h1 class="text-success mb-3
+                             ml-5 mt-5">
+                            4 Kanal
+                        </h1>
+                        <ul class="text-dark   ml-4 mt-3">
+                            <li>
+                                Total Price 1 crore 40 lac.
+                            </li>
+                            <li>
+                                25% Advanced 35 lac.
+                            </li>
+                            <li>
+                                12 Month Easy Installment.
+                            </li>
+                            <li>
+                                Monthly 18 lac 75 thousand.
+                            </li>
+                        </ul>
+                        <button class="border-0"
+                            style="background-image: radial-gradient(circle, #F4DA64, #b58f17); height:50px;">8,75000/Monthly</button>
+                    </div>
+                </div>
+
+
+                <div class="col-sm-3 col-md-3 col-lg-3 mt-3">
+                    <div class="card shadow mb-5 mt-5 border-0">
+                        <h1 class="text-success mb-3
+                             ml-5 mt-5">
+                            6 Kanal
+                        </h1>
+                        <ul class="text-dark   ml-4 mt-3">
+                            <li>
+                                Total Price 2 crore 10 lac.
+                            </li>
+                            <li>
+                                25% Advanced 52 lac.
+                            </li>
+                            <li>
+                                12 Month Easy Installment.
+                            </li>
+                            <li>
+                                Monthly 13 lac 12 thousand.
+                            </li>
+                        </ul>
+                        <button class="border-0"
+                            style="background-image: radial-gradient(circle, #F4DA64, #b58f17); height:50px;">13,12500/Monthly</button>
+                    </div>
+
+                </div>
+
+
+                <div class="col-sm-3 col-md-3 col-lg-3 mt-3">
+                    <div class="card shadow mb-5 mt-5 border-0">
+                        <h1 class="text-success mb-3
+                             ml-5 mt-5">
+                            8 Kanal
+                        </h1>
+                        <ul class="text-dark   ml-4 mt-3">
+                            <li>
+                                Total Price 2 crore 80 lac.
+                            </li>
+                            <li>
+                                25% Advanced 70 lac.
+                            </li>
+                            <li>
+                                12 Month Easy Installment.
+                            </li>
+                            <li>
+                                Monthly 17 lac 50 thousand.
+                            </li>
+                        </ul>
+                        <button class="border-0"
+                            style="background-image: radial-gradient(circle, #F4DA64, #b58f17); height:50px;">17,50000/Monthly</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+
+    <!--Facilities-->
+
+    <div id="Section4">
+        <h1 class="text-center text-success mt-5 mb-5 font-weight-bold">FACILITIES</h1>
+        <div class="row m-auto mt-5">
+
+
+
+            <div class="col-sm-3 col-md-3 col-lg-3">
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="Facility (4).jpg" alt="Avatar" style="width:300px;height:300px;">
+                        </div>
+                        <div class="flip-card-back">
+                            <h1 class="mt-2">Masjid</h1>
+                            <p class="mt-2"> While staying at farm house you may need to perform the religious
+                                activities
+                                then we provides you the state of the art mosque. We are the best Farm Houses Society
+                                in Lahore.</p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-3 col-md-3 col-lg-3">
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="Facility (2).jpg" alt="Avatar" style="width:300px;height:300px;">
+                        </div>
+                        <div class="flip-card-back">
+                            <h1 class="mt-2">24/7 Security</h1>
+                            <p class="mt-2"> Security plays a vital role to protect you and your house. You don’t have
+                                to need take
+                                any tension about your security. We are the best ever farm houses in Lahore with 24/7
+                                security service.CCTv cameras are installed in all Society Security Guards are very
+                                active and Alert.</p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-3 col-md-3 col-lg-3">
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="Facility (1).jpg" alt="Avatar" style="width:300px;height:300px;">
+                        </div>
+                        <div class="flip-card-back">
+                            <h1 class="mt-2">Carpet Roads</h1>
+                            <p class="mt-2">LAHORE GREENZ is the best farm house society in Lahore with carpeted roads.
+                                We are provided carpeted roads in all over the society.Roads are very smooth and
+                                comfortable
+                                for drive. Smooth and comfortable Roads which make your travel joyful and relax</p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-3 col-md-3 col-lg-3">
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="Facility (6).jpg" alt="Avatar" style="width:300px;height:300px;">
+                        </div>
+                        <div class="flip-card-back">
+                            <h1 class="mt-2">Parks</h1>
+                            <p class="mt-2">To maintain good physical health morning and evening walk is the most
+                                important thing.
+                                You may need a good park for walk. We are the best farm houses society with high quality
+                                park.
+                                Green Parks are main part of Lahore Greenz and for Healthy Life. </p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+        </div>
+    </div>
+
+    <!--Videos Section-->
+    <div id="Section5">
+        <h1 class="text-center text-success mt-5 mb-5 font-weight-bold">VIDEOS</h1>
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-6 mt-5 mb-5">
+                <h1 class="text-success text-center mb-5 mt-5">Lahore Greenz Video</h1>
+                <p class="text-justify ml-3 text-dark mt-5">
+                    We have a team of experienced professionals who would help you out in your search
+                    for the right kind of farm houses in Lahore. We are deal in all sizes of farm houses
+                    and we ensure that we will give you our best in terms of services, pricing and availability
+                    so we ensure that you will get best farm house. Our farm houses in Lahore are quit safe to live in.
+                    LAHORE GREENZ is a gated community with high quality roads and other facilities. These Farm houses
+                    are situated in highly safe areas.
+
+                    </br>
+                    <a href="https://www.youtube.com/channel/UChRtJvmslQssCzl6CY461RQ"><button
+                            class="btn btn-danger ml-5 mt-5">For More Videos<span
+                                class="text-white fab fa-youtube  fa-lg ml-2"></span></button></a>
+                </p>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6 mt-5 mb-5">
+                <iframe width="100%" height="350" src="https://www.youtube.com/embed/6I_kcBNDPSU" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen style="border-radius:10px;"></iframe>
+
+            </div>
+
+        </div>
+    </div>
+
+
+
+    <div id="Section6">
+        <h1 class="text-center text-success font-weight-bold mb-5 mt-5">CONTACT US</h1>
+        <div class="row">
+            <div class="col-sm-6 col-md-6 col-lg-6">
+                <div class="card text-center text-success border-0 mt-5">
+                    <h2>Head Office</h2>
+                    <p class="text-dark">Plaza#60 Phase 6 DHA Main Boulevard Lahore Punjab</p>
+                    <h2>
+                        Call us
+                    </h2>
+                    <p class="text-dark text-center">0300/0321-8464866 &nbsp; ,&nbsp; 0321-4248468</p>
+                    <h2>E-mail</h2>
+                    <p class="text-dark">info@lahoregreenz.pk</p>
+
+                </div>
+            </div>
+
+
+
+            <div class="col-sm-6 col-md-6 col-lg-6">
+                <h1 class="text-success text-center">Get In Touch</h1>
+                <div class="form-group">
+                    <input type="text" placeholder="Name" class="form-control">
+
+                </div>
+                <div class="form-group">
+                    <input type="tel" placeholder="Mobile" class="form-control">
+                </div>
+                <div class="form-group">
+                    <input type="text" placeholder="E-mail" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <textarea type="" placeholder="Comment" class="form-control" style="height:150px;"></textarea>
+                </div>
+                <button class="btn btn-success">Send</button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="scrolltop float-right mt-5">
+        <i class="fa fa-arrow-up bg-success" onclick="topFunction()" id="myBtn" title="Go to top"></i>
+    </div>
+
+    <div id="Section8">
+
+        <div class="col-sm-12 col-md-2 col-lg-12">
+            <h1 class="text-success text-center font-weight-bold mt-5 mb-5">LOCATION</h1>
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d748.0547343127539!2d74.47739039525852!3d31.345043112684966!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3919a7cb5650c703%3A0x34b5ea9b8b57caeb!2sLahore%20Greenz%20Luxury%20Farmhouses!5e0!3m2!1sen!2s!4v1608730844671!5m2!1sen!2s"
+                class="mb-5" width="100%" height="600" frameborder="0" style="border:0;" allowfullscreen=""
+                aria-hidden="false" tabindex="0"></iframe>
+        </div>
+
+    </div>
+
+
+
+
+
+    <div id="Section7">
+        <div class="row m-auto">
+
+            <div class="col-sm-6 col-md-6 col-lg-6 mt-5">
+                <img src="LAHORE LOGO.png" class="img-fluid zoom ml-5 mb-5 mt-5" width="300px"
+                    style="background-color:white;border-radius:30px;">
+            </div>
+
+
+            <div class="col-sm-6 col-md-6 col-lg-6">
+                <h1 class="text-success text-center">About Company</h1>
+                <p class="text-justify mb-5">Lahore Greenz is a Society which Provide the Luxury Farm Houses For Luxury
+                    Life Style This Project is Developed By RA RealEstate.</p>
+                <h1 class="ml-3">
+                    <a href="https://www.facebook.com/lahoregreenzpk"><span
+                            class="text-success fab fa-facebook-f m-2 zoom"></span></a>
+
+                    <a href="https://wa.me/923218464866"><span class="text-success fab fa-whatsapp m-2 zoom"></span></a>
+
+                    <a href="https://www.youtube.com/channel/UChRtJvmslQssCzl6CY461RQ"><span
+                            class="text-success fab fa-youtube m-2 zoom"></span></a>
+
+                    <a href="https://www.instagram.com/lahoregreenzpk/"><span
+                            class="text-success 	fab fa-instagram m-2 zoom"></span></a>
+
+                    <a href="https://twitter.com/lahoregreenzpk"> <span
+                            class="text-success 	fab fa-twitter m-2 zoom"></span></a>
+                </h1>
+
+            </div>
+        </div>
+
+        <p class="ml-5 text-muted">Powerd by Softinject Solutions 2020</p>
+    </div>
+
+
+
+
+
+    <button class="open-button" onclick="openForm()">Chat</button>
+
+    <div class="chat-popup" id="myForm">
+        <form action="/action_page.php" class="form-container">
+            <h1>RA RealEstates </h1>
+
+            <label for="msg"><b>Message</b></label>
+            <textarea placeholder="How may i help you Please..." name="msg" required></textarea>
+
+            <button type="submit" class="btn">Send</button>
+            <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+        </form>
+    </div>
+
+    <script>
+        function openForm() {
+            document.getElementById("myForm").style.display = "block";
+        }
+
+        function closeForm() {
+            document.getElementById("myForm").style.display = "none";
+        }
+    </script>
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+
+
+
+
+
+    <!--Navigation bar script-->
+    <script>
+        $(window).scroll(function () {
+            $('nav').toggleClass('scrolled', $(this).scrollTop() > 50);
+
+        });
+    </script>
+
+
+    <!--Top button script-->
+    <script>
+        //Get the button
+        var mybutton = document.getElementById("myBtn");
+
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function () { scrollFunction() };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+        }
+
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
+
+
+
+    <!--preLoader Script-->
+
+    <script>
+        var preloader = document.getElementById('loading');
+
+        function MyFunction() {
+            preloader.style.display = 'none';
+        }
+    </script>
+
+</body>
+
+</html>
